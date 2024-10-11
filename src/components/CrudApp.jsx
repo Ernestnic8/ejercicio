@@ -3,36 +3,10 @@ import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
 
 
-const initialDb=[
-    {
-        id:1,
-        name:"Seiya",
-        constelacion:"Pegaso"
-    },
-    {
-        id:2,
-        name:"Shiryu",
-        constelacion:"Dragon"
-    },
-    {
-        id:3,
-        name:"Hyoga",
-        constelacion:"Cisne"
-    },
-    {
-        id:4,
-        name:"Shun",
-        constelacion:"Andromeda"
-    },
-    {
-        id:5,
-        name:"Ikki",
-        constelacion:"Fenix"
-    }
-];
+
 
 const CrudApp = ()=>{
-    const [db,setDB]=useState(initialDb);
+    const [db,setDB]=useState([]);
     
     const [dataToEdit, setDataToEdit] = useState(null);
 

@@ -1,3 +1,4 @@
+import CrudApi from "./components/CrudApi.JSx"
 import CrudApp from "./components/CrudApp"
 
 
@@ -7,6 +8,8 @@ function App() {
     <>
       <div>
         <h2>CRUD</h2>
+        <CrudApi/>
+        <hr/>
         <CrudApp/>
       </div>
     </>
