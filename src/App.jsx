@@ -1,7 +1,9 @@
 // import CrudApi from "./components/CrudApi.JSx"
+import ContactForm from "./components/ContactForm"
 import CrudApp from "./components/CrudApp"
-import SelectsAnidados from "./components/SelectsAnidados"
-import SongSearch from "./components/SongSearch"
+import Modals from "./components/Modals"
+//import SelectsAnidados from "./components/SelectsAnidados"
+//import SongSearch from "./components/SongSearch"
 
 
 function App() {
@@ -10,11 +12,16 @@ function App() {
     <>
       <div>
         <h2>CRUD</h2>
-        <SelectsAnidados/>
+        <Modals/>
+        <hr/>
+         <ContactForm/>
+        {/*<hr/>
+        <SelectsAnidados/> */}
+        {/*
         <hr/>
         <SongSearch/>
         <hr/>
-        {/* <CrudApi/> */}
+         <CrudApi/> */}
         <hr/>
         <CrudApp/>
       </div>

@@ -15,6 +15,8 @@ export const useFetch = (url) => {
       try {
         const res = await fetch(url, { signal, mode: 'cors' });
 
+        console.log("hgola}}}}}",res)
+
         if (!res.ok) {
           let err = new Error("Error en la petición Fetch");
           err.status = res.status || "00";
