@@ -10,10 +10,11 @@ const ModalPortal = ({ children, isOpen, closeModal }) => {
         <button className="modal-close" onClick={closeModal}>
           X
         </button>
+
         {children}
       </div>
     </article>,
-    document.getElementById("modal")
+    document.getElementById("root")
   );
 };
 
