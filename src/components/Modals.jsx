@@ -1,28 +1,56 @@
-import useModal from "../hooks/useModal"
-import Modal from "./Modal"
+import { useModal } from "../hooks/useModal";
+import ContactForm from "./ContactForm";
+import Modal from "./Modal";
+import ModalPortal from "./ModalPortal";
+import SongSearch from "./SongSearch";
 
 const Modals = () => {
-
-    const [isOpenModal1, openModal1, closeModal1]=useModal(false)
-    const [isOpenModal2, openModal2, closeModal2]=useModal(false)
+  const [isOpenModal1, openModal1, closeModal1] = useModal(true);
+  const [isOpenModal2, openModal2, closeModal2] = useModal(false);
+  const [isOpenContact, openModalContact, closeModalContact] = useModal(false);
+  const [isOpenSong, openModalSong, closeModalSong] = useModal(false);
+  const [isOpenPortal, openModalPortal, closeModalPortal] = useModal(false);
 
   return (
     <div>
       <h2>Modales</h2>
       <button onClick={openModal1}>Modal 1</button>
-       <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
+      <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
         <h3>Modal 1</h3>
-        <p>Este es un modal</p>
-        <img src="data:image/jpeg;base64,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" alt="Greninja"/>
+        <p>Hola ese es el contenido de mi modal 1</p>
+        <img src="https://placeimg.com/400/400/animals" alt="Animals" />
       </Modal>
       <button onClick={openModal2}>Modal 2</button>
       <Modal isOpen={isOpenModal2} closeModal={closeModal2}>
-        <h3>Modal 2</h3>
-        <p>Otro Modal</p>
-        <img src="" alt="M"/>
+        <h3>Otro Modal</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa maiores
+          eum minima earum atque aut blanditiis, cumque eius! Eius nobis odit
+          tempora aperiam quod obcaecati repellendus optio voluptas numquam
+          necessitatibus?
+        </p>
+        <img src="https://placeimg.com/400/400/nature" alt="Nature" />
       </Modal>
+      <button onClick={openModalContact}>Modal Contacto</button>
+      <Modal isOpen={isOpenContact} closeModal={closeModalContact}>
+        <ContactForm />
+      </Modal>
+      <button onClick={openModalSong}>Modal Canciones</button>
+      <Modal isOpen={isOpenSong} closeModal={closeModalSong}>
+        <SongSearch />
+      </Modal>
+      <button onClick={openModalPortal}>Modal en Portal</button>
+      <ModalPortal isOpen={isOpenPortal} closeModal={closeModalPortal}>
+        <h3>Modal en Portal</h3>
+        <p>
+          Este es el contenido de un modal que carga en otro nodo del DOM
+          diferente a donde carga nuestra app de React, gracias a un React
+          Portal.
+        </p>
+        <img src="https://placeimg.com/400/400/tech" alt="Tech" />
+      </ModalPortal>
     </div>
-  )
-}
+  );
+};
 
-export default Modals
+export default Modals;
